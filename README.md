@@ -9,6 +9,13 @@
 
 - [immich](./components/immich/README.md) : 一款优秀的图片和视频管理软件，拥有手机端 APP 。[官方网站](https://immich.app/)
 
+## 安装使用
+```
+git clone https://github.com/unihomecloud/unihome.git
+cd components/immich
+docker compose up -d
+```
+
 ## 关联资源
 
 - [ophub/amlogic-s9xxx-armbian](https://github.com/ophub/amlogic-s9xxx-armbian): 一个提供丰富的 armbian 刷机系统资源的项目

@@ -10,7 +10,28 @@
 - 多用户： 支持基本的用户管理能力
 - 共享相册：支持与其他用户共享相册，例如亲子相册，但是共享相册不支持时间线
 
-### 常见功能截图
+## 安装
+```
+cd components/immich
+docker compose up -d
+```
+图片的缓存目录在 `./library/upload/`
+
+访问地址： `http://ipaddress:2283`
+
+<img src="./images/image-20240406105323704.png" alt="image-20240406105323704" style="zoom: 33%;" />
+
+初始化管理员信息：
+
+<img src="./images/image-20240406105348550.png" alt="image-20240406105348550" style="zoom:50%;" />
+
+<img src="./images/image-20240406105421685.png" alt="image-20240406105421685" style="zoom:50%;" />
+
+<img src="./images/image-20240406105429275.png" alt="image-20240406105429275" style="zoom:50%;" />
+
+手机端下载 [Immich App](https://apps.apple.com/cn/app/immich/id1613945652) ，登录即可使用。
+
+## 常见功能截图
 
 web 版本管理界面：
 
@@ -19,6 +40,25 @@ web 版本管理界面：
 手机端页面：
 
 <img src="./images/921721465410_.pic.jpg" alt="921721465410_.pic" style="zoom:50%;" />
+
+## 常见问题
+### 错误的使用了 docker-compose 命令
+
+```
+docker-compose down
+ERROR: The Compose file './docker-compose.yml' is invalid because:
+'name' does not match any of the regexes: '^x-'
+
+You might be seeing this error because you're using the wrong Compose file version. Either specify a supported version (e.g "2.2" or "3.3") and place your service definitions under the `services` key, or omit the `version` key and place your service definitions at the root of the file to use version 1.
+For more on the Compose file format versions, see https://docs.docker.com/compose/compose-file/
+```
+
+使用一下命令替换：
+
+```
+docker compose down
+docker compose up -d
+```
 
 ## 总结
 
