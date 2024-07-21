@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  minidlna:
+    image: vladgh/minidlna
+    container_name: minidlna
+    network_mode: host
+    volumes:
+      - ./media:/media
+    environment:
+      MINIDLNA_MEDIA_DIR: /media
+      MINIDLNA_FRIENDLY_NAME: MyMini
+    restart: unless-stopped

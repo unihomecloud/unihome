@@ -1,0 +1,13 @@
+# host默认端口 2345
+# compose.yml
+services:
+  xunlei:
+    image: registry.cn-shenzhen.aliyuncs.com/cnk3x/xunlei:latest
+    privileged: true
+    container_name: xunlei
+    hostname: mynas
+    network_mode: host
+    volumes:
+      - ./data:/xunlei/data
+      - ./data/downloads:/xunlei/downloads
+    restart: unless-stopped
